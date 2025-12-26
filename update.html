@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Update Status</title>
+<link rel="stylesheet" href="styles.css">
+
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js"></script>
+<script src="firebaseConfig.js"></script>
+<script src="script.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 id="updateTitle">Update Projector Status</h1>
+
+    <div id="batchSelect" class="hidden">
+        <h2>Select Batch</h2>
+
+        <button class="btn btn-green" onclick="setOccupied('MBA-1A')">MBA-1A</button>
+        <button class="btn btn-green" onclick="setOccupied('MBA-1B')">MBA-1B</button>
+        <button class="btn btn-green" onclick="setOccupied('MBA-2A')">MBA-2A</button>
+        <button class="btn btn-green" onclick="setOccupied('MBA-2B')">MBA-2B</button>
+    </div>
+
+    <div id="issueSelect" class="hidden">
+        <h2>Report Issue</h2>
+
+        <button class="btn btn-yellow" onclick="setIssue('Missing Remote')">Missing Remote</button>
+        <button class="btn btn-red" onclick="setIssue('Not Working')">Not Working</button>
+    </div>
+
+</div>
+
+<script>
+const type = new URLSearchParams(window.location.search).get("type");
+
+if(type === "occupied") {
+    document.getElementById("batchSelect").classList.remove("hidden");
+}
+if(type === "issues") {
+    document.getElementById("issueSelect").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
