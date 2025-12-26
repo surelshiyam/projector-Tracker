@@ -4,54 +4,56 @@
 <title>Projector Status</title>
 <link rel="stylesheet" href="styles.css">
 
-<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js"></script>
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 <script src="firebaseConfig.js"></script>
 <script src="script.js"></script>
 </head>
 
 <body>
 
+<div class="doodle-bg"></div>
+
 <div class="container">
 
-    <img src="img/projector-doodle.png" class="main-doodle" />
+    <!-- projector doodle -->
+    <img src="img/projector-doodle.png" class="projector-doodle">
 
     <h1 class="title">Classroom Projector Tracker</h1>
-    
+
     <div id="statusBox" class="status-box">
-        Loading projector status…
+        Loading status…
     </div>
 
-    <div class="button-area">
+    <!-- action buttons -->
+    <div class="button-grid">
 
-        <button onclick="openUpdate('occupied')" class="btn btn-green">
-            📘 Mark as Occupied
+        <button onclick="openUpdate('occupied')" class="note-btn green">
+            <img src="img/classroom-icon.png" class="icon">
+            <span>SELECT CLASSROOM</span>
         </button>
 
-        <button onclick="markReturned()" class="btn btn-blue">
-            🏠 Returned to HOD's Cabin
+        <button onclick="openUpdate('issues')" class="note-btn blue">
+            <img src="img/issue-icon.png" class="icon">
+            <span>REPORT ISSUE</span>
         </button>
 
-        <button onclick="openUpdate('issues')" class="btn btn-yellow">
-            ❓ Report Issue
+        <button onclick="location.href='index.html'" class="note-btn orange">
+            <img src="img/home-icon.png" class="icon">
+            <span>HOME</span>
         </button>
+
+        <button onclick="alert('Contact your admin')" class="note-btn pink">
+            <img src="img/help-icon.png" class="icon">
+            <span>HELP</span>
+        </button>
+
     </div>
 
-    <button onclick="openAdmin()" class="admin-btn">
-        🔐 Admin Login
-    </button>
+    <button onclick="openAdmin()" class="admin-btn">🔐 Admin Login</button>
 
 </div>
-<!-- Firebase Core SDK -->
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 
-<!-- Firebase Firestore -->
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-
-<!-- Your Firebase config -->
-<script src="firebaseConfig.js"></script>
-
-<!-- Your main script -->
-<script src="script.js"></script>
 </body>
 </html>
